@@ -48,6 +48,14 @@ $api->version('v1',[
     });
 //问卷调查end
 
+    //留言板
+    $api->get('messageboard/getdata','\App\Http\Controllers\Api\MessageBoardController@get_MessageBoard');
+    $api->post('messageboard/insertdata','\App\Http\Controllers\Api\MessageBoardController@insert_MessageBoard');
+    $api->post('messageboard/delete/{id}/{key}','\App\Http\Controllers\Api\MessageBoardController@delete_MessageBoard');
+
+
+//留言板结束
+
 
 //新生查询start
     $api->get('newstudent','FeatureController@newStudent');
